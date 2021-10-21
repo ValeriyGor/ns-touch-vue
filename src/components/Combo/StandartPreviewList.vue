@@ -260,6 +260,14 @@ export default {
         this.setSlotToState("R1", i+3);
         this.spaceSlots = 3;
         size = 2
+      } else if(code.substr(0, 2) === 'R5'){
+        this.setSlotToState("R1", i);
+        this.setSlotToState("R1", i+1);
+        this.setSlotToState("R1", i+2);
+        this.setSlotToState("R1", i+3);
+        this.setSlotToState("R1", i+4);
+        this.spaceSlots = 4;
+        size = 2
       } else if(code.substr(0, 2) === 'S1'){
         this.setSlotToState("S1", i);
         size = 2

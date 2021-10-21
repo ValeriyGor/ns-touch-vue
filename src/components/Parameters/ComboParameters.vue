@@ -247,6 +247,9 @@ export default {
       if(this.currentComboArtikul.includes('R4')){
         include = true
       }
+      if(this.currentComboArtikul.includes('R5')){
+        include = true
+      }
       if(this.currentComboArtikul.includes('RCH2ac')){
         include = true
       }
@@ -296,6 +299,9 @@ export default {
     validate90series(){
       if(+this.params.switchSensorsCount === 6){
         this.params.switchSensorsCount = 4
+      }
+      if(+this.params.slotsCount === 5){
+        this.params.slotsCount = 4
       }
       this.changeSeries()
     },

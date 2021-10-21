@@ -4,17 +4,17 @@
       h2 {{orderName.length > 0 ? orderName : 'Order' }}
       table(:key="j")
         tr
-          th(width="250") Name
-          th(width="200") Vendor Code
-          th(width="75") Count
+          th(width="150") Name
+          th(width="300") Vendor Code
+          th(width="30") Cnt
           th(width="250") Preview
-          th(width="200") QR
+          th(width="100") QR
         tr(v-for="(collect, i) in collection")
-          td(width="250") {{collect.name}}
-          td(width="225") {{collect.artikul}}
-          td(width="225" style="text-align: center") {{collect.type === 'switch' ? collect.parameters.switchesCount : collect.parameters.comboCount }}
+          td(width="150") {{collect.name}}
+          td(width="300") {{collect.artikul}}
+          td(width="30" style="text-align: center") {{collect.type === 'switch' ? collect.parameters.switchesCount : collect.parameters.comboCount }}
           td(width="250" style="text-align: center")
-            SmallPreview(:parameters="collect.parameters" :icons="collect.icons" :touchWidth="50" v-if="collect.type === 'switch'")
+            SmallPreview(:parameters="collect.parameters" :icons="collect.icons" :touchWidth="40" v-if="collect.type === 'switch'")
             ComboSmallPreview(
               v-if="(collect.type === 'combo' || collect.type === 'sockets') && !updatedTable"
               :artikul="collect.artikul"
@@ -23,7 +23,7 @@
               :colorSocket="collect.parameters.colorSocket"
             )
             //:icons="getIcons(collect)"
-          td(width="250" style="text-align: center")
+          td(width="100" style="text-align: center")
             QrcodeVue(:value="`${domain}show-touch/${collect.artikul}-${getIconsLink(collect.parameters.sensorsCount, collect.icons)}`" size="80"  v-if="collect.type === 'switch'")
             QrcodeVue(:value="`${domain}show-combo/${getTrimArtikul(collect)}`" size="80" v-if="collect.type === 'combo' || collect.type === 'sockets'")
 

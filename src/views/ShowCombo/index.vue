@@ -37,18 +37,17 @@
         return this.getPalette(this.separateArtikul[2].substr(0, 2))
       },
       colorSocket(){
-        return this.separateArtikul[3].substr(0, 2)
+        return this.separateArtikul[3] ? this.separateArtikul[3].substr(0, 2) : 'NF'
       },
       icons(){
         let icons = []
         if(this.separateArtikul[4]){
           icons = this.separateArtikul[4].split(';');
           icons = icons.map(icon => icon.split('&'))
-        } else if(+this.separateArtikul[3] || this.separateArtikul[3].includes('&')){
+        } else if(this.separateArtikul[3] && (!isNaN(this.separateArtikul[3]) || this.separateArtikul[3].includes('&'))){
           icons = this.separateArtikul[3].split(';');
           icons = icons.map(icon => icon.split('&'))
         }
-        console.log(icons);
         return icons
       },
       sizeSlot() {
@@ -57,7 +56,7 @@
       }
     },
     mounted() {
-      if(this.separateArtikul.length > 3){
+      if(this.separateArtikul.length >= 3){
         this.isTrueArtikul = true
       }
     },

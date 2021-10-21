@@ -44,7 +44,7 @@ export default {
         currentIndex++;
       } else if (slots[index - 1] && slots[index - 1] === 'H08') {
         // console.log('Пропуск')
-      }  else if((slot === 'R1' || slot === 'S1') && (filteredSlots[currentIndex] === 'R1' || filteredSlots[currentIndex] === 'R2' || filteredSlots[currentIndex] === 'R3')){
+      }  else if((slot === 'R1' || slot === 'S1') && (filteredSlots[currentIndex] === 'R1' || filteredSlots[currentIndex] === 'R2' || filteredSlots[currentIndex] === 'R3' || filteredSlots[currentIndex] === 'R4')){
         filteredSlots[currentIndex] = 'R' + (+filteredSlots[currentIndex].charAt(1) + 1);
       } else if (slot === 'S1' || slot === 'R1'){
         filteredSlots.push('R1')

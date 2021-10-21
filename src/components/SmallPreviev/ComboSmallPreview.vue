@@ -75,7 +75,8 @@ export default {
         1: null,
         2: null,
         3: null,
-        4: null
+        4: null,
+        5: null
       }
     }
   },
@@ -194,6 +195,14 @@ export default {
         this.setSlot("R1", i+1);
         this.setSlot("R1", i+2);
         this.setSlot("R1", i+3);
+        this.spaceSlots = 3;
+        size = 2
+      }  else if(code.substr(0, 2) === 'R5'){
+        this.setSlot("R1", i);
+        this.setSlot("R1", i+1);
+        this.setSlot("R1", i+2);
+        this.setSlot("R1", i+3);
+        this.setSlot("R1", i+4);
         this.spaceSlots = 3;
         size = 2
       } else if(code.substr(0, 2) === 'S1'){
