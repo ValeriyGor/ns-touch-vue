@@ -22,7 +22,7 @@ export default () => ({
     switchSensorsCount: null,
     switchOrientation: null,
     switchInlay: null,
-    switchInterface: null,
+    switchInterface: "DRY CONTACT",
     // socket params
     colorSocket: 'NF',
     selectedSlots: {

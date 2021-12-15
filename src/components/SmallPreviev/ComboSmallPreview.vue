@@ -20,21 +20,21 @@
         div.shadow(:class="{'with-sh': palette.length > 0}")
           img(:src="getURLImageSK()")
 
-      .ComboSmallPreview__Item-Slot.ComboSmallPreview__Item-01(v-else-if="slot === '01'")
+      .ComboSmallPreview__Item-Slot.ComboSmallPreview__Item-01(v-else-if="slot === '01' || slot === '11' || slot === '21'")
         div.icon(:style="{backgroundImage: `url(${getIconUrl(0, index)})`}" v-if="slotsIcons[index] && getIconUrl(0, index )")
 
-      .ComboSmallPreview__Item-Slot.ComboSmallPreview__Item-V02(v-else-if="slot === 'V02'")
+      .ComboSmallPreview__Item-Slot.ComboSmallPreview__Item-V02(v-else-if="slot === 'V02' || slot === 'V12' || slot === 'V22'")
         div.icon(:style="{backgroundImage: `url(${getIconUrl(i - 1, index)})`}" v-for="i in 2" v-if="slotsIcons[index] && getIconUrl(i - 1, index )")
 
-      .ComboSmallPreview__Item-Slot.ComboSmallPreview__Item-H02(v-else-if="slot === 'H02'")
+      .ComboSmallPreview__Item-Slot.ComboSmallPreview__Item-H02(v-else-if="slot === 'H02' || slot === 'H12' || slot === 'H22'")
         div.icon(:style="{backgroundImage: `url(${getIconUrl(i - 1, index)})`}" v-for="i in 2" v-if="slotsIcons[index] && getIconUrl(i - 1, index )")
 
-      .ComboSmallPreview__Item-Slot.ComboSmallPreview__Item-04(v-else-if="slot === '04'")
+      .ComboSmallPreview__Item-Slot.ComboSmallPreview__Item-04(v-else-if="slot === '04' || slot === '14' || slot === '24'")
         div.icon(:style="{backgroundImage: `url(${getIconUrl(i - 1, index)})`}" v-for="i in 4" v-if="slotsIcons[index] && getIconUrl(i - 1, index )")
 
-      .ComboSmallPreview__Item-Slot.ComboSmallPreview__Item-H08(v-else-if="slot === 'H08'")
+      .ComboSmallPreview__Item-Slot.ComboSmallPreview__Item-H08(v-else-if="slot === 'H08' || slot === 'H18' || slot === 'H28'")
         .help
-        div.icon(:style="{backgroundImage: `url(${getIconUrl(i - 1, index)})`}" v-for="i in 8" v-if="slotsIcons[index] && getIconUrl(i - 1, index )")
+        div.icon(:style="{backgroundImage: `url(${getIconUrl(i - 1, index)})`}" :class="'icon-num-' + i" v-for="i in 8" v-if="slotsIcons[index] && getIconUrl(i - 1, index )")
         .help
 
       .ComboSmallPreview__Item-Slot(:class="'ComboSmallPreview__Item-' + slot" v-else)
@@ -137,15 +137,15 @@ export default {
       let currInd = 0;
       if(this.icons.length){
         this.notEmptySlots.forEach((slot, i) => {
-          if(slot === '01'){
+          if(slot === '01' || slot === '11' || slot === '21'){
             currentIcons[i] = this.icons[currInd] ? this.icons[currInd++].slice(0, 1) : currInd++;
-          } else if (slot === 'H02') {
+          } else if (slot === 'H02' || slot === 'H12' || slot === 'H22') {
             currentIcons[i] = this.icons[currInd] ? this.icons[currInd++].slice(0, 8) : currInd++;
-          } else if (slot === 'V02') {
+          } else if (slot === 'V02' || slot === 'V12' || slot === 'V22') {
             currentIcons[i] = this.icons[currInd] ? this.icons[currInd++].slice(0, 8) : currInd++;
-          } else if (slot === '04') {
+          } else if (slot === '04' || slot === '14' || slot === '24') {
             currentIcons[i] = this.icons[currInd] ? this.icons[currInd++].slice(0, 4) : currInd++;
-          }  else if (slot === 'H08') {
+          }  else if (slot === 'H08' || slot === 'H18' || slot === 'H28') {
             currentIcons[i] = this.icons[currInd] ? this.icons[currInd++].slice(0, 8) : currInd++;
           }
         })
@@ -173,8 +173,20 @@ export default {
       if(code.substr(0, 2) === '01'){
         this.setSlot("01", i);
         size = 2
+      } else if(code.substr(0, 2) === '11'){
+        this.setSlot("11", i);
+        size = 2
+      } else if(code.substr(0, 2) === '21'){
+        this.setSlot("21", i);
+        size = 2
       } else if(code.substr(0, 2) === '04'){
         this.setSlot("04", i);
+        size = 2
+      } else if(code.substr(0, 2) === '14'){
+        this.setSlot("14", i);
+        size = 2
+      } else if(code.substr(0, 2) === '24'){
+        this.setSlot("24", i);
         size = 2
       } else if(code.substr(0, 2) === 'R1'){
         this.setSlot("R1", i);
@@ -211,14 +223,38 @@ export default {
       } else if(code.substr(0, 3) === 'V02'){
         this.setSlot("V02", i);
         size = 3
+      } else if(code.substr(0, 3) === 'V12'){
+        this.setSlot("V12", i);
+        size = 3
+      } else if(code.substr(0, 3) === 'V22'){
+        this.setSlot("V22", i);
+        size = 3
       } else if(code.substr(0, 3) === 'H02'){
         this.setSlot("H02", i);
+        size = 3
+      } else if(code.substr(0, 3) === 'H12'){
+        this.setSlot("H12", i);
+        size = 3
+      } else if(code.substr(0, 3) === 'H22'){
+        this.setSlot("H22", i);
         size = 3
       } else if(code.substr(0, 3) === 'H08'){
         this.setSlot("H08", i);
         size = 2
+      } else if(code.substr(0, 3) === 'H18'){
+        this.setSlot("H18", i);
+        size = 2
+      } else if(code.substr(0, 3) === 'H28'){
+        this.setSlot("H28", i);
+        size = 2
       } else if(code.substr(0, 3) === 'V08'){
         this.setSlot("H08", i);
+        size = 2
+      } else if(code.substr(0, 3) === 'V18'){
+        this.setSlot("H18", i);
+        size = 2
+      } else if(code.substr(0, 3) === 'V28'){
+        this.setSlot("H28", i);
         size = 2
       } else if(code.substr(0, 5) === 'CH2ac'){
         this.setSlot("CH2ac", i);
@@ -242,7 +278,7 @@ export default {
     getStylesSize(slot){
       let width = this.sizeSlot + 'px';
       let height = this.sizeSlot + 'px';
-      if(slot === 'H08'){
+      if(slot === 'H08' || slot === 'H18' || slot === 'H28'){
         if(this.orientation === 'Horizontal')
           width = this.sizeSlot * 2 + 'px';
         else
@@ -339,42 +375,42 @@ export default {
         .icon {
           width: 20%;
 
-          &:nth-of-type(1) {
+          &.icon-num-1 {
             top: 3%;
             left: 5%;
           }
 
-          &:nth-of-type(2) {
+          &.icon-num-2 {
             top: 3%;
             left: 53%;
           }
 
-          &:nth-of-type(3) {
+          &.icon-num-3 {
             top: 28%;
             left: 3%;
           }
 
-          &:nth-of-type(4) {
+          &.icon-num-4 {
             top: 28%;
             left: 53%;
           }
 
-          &:nth-of-type(5) {
+          &.icon-num-5 {
             top: 53%;
             left: 3%;
           }
 
-          &:nth-of-type(6) {
+          &.icon-num-6 {
             top: 53%;
             left: 53%;
           }
 
-          &:nth-of-type(7) {
+          &.icon-num-7 {
             top: 78%;
             left: 3%;
           }
 
-          &:nth-of-type(8) {
+          &.icon-num-8 {
             top: 78%;
             left: 53%;
           }
@@ -437,35 +473,35 @@ export default {
         }
         .icon{
           width: 10%;
-          &:nth-of-type(1){
+          &.icon-num-1{
             top: 5%;
             left: 3%;
           }
-          &:nth-of-type(2){
+          &.icon-num-2{
             top: 5%;
             left: 28%;
           }
-          &:nth-of-type(3){
+          &.icon-num-3{
             top: 5%;
             left: 53%;
           }
-          &:nth-of-type(4){
+          &.icon-num-4{
             top: 5%;
             left: 78%;
           }
-          &:nth-of-type(5){
+          &.icon-num-5{
             top: 55%;
             left: 3%;
           }
-          &:nth-of-type(6){
+          &.icon-num-6{
             top: 55%;
             left: 28%;
           }
-          &:nth-of-type(7){
+          &.icon-num-7{
             top: 55%;
             left: 53%;
           }
-          &:nth-of-type(8){
+          &.icon-num-8{
             top: 55%;
             left: 78%;
           }

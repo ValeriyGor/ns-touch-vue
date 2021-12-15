@@ -236,8 +236,22 @@ export default {
       if(code.substr(0, 2) === '01'){
         this.setSlotToState("01", i);
         size = 2
+      }
+      if(code.substr(0, 2) === '11'){
+        this.setSlotToState("11", i);
+        size = 2
+      }
+      if(code.substr(0, 2) === '21'){
+        this.setSlotToState("21", i);
+        size = 2
       } else if(code.substr(0, 2) === '04'){
         this.setSlotToState("04", i);
+        size = 2
+      } else if(code.substr(0, 2) === '14'){
+        this.setSlotToState("14", i);
+        size = 2
+      } else if(code.substr(0, 2) === '24'){
+        this.setSlotToState("24", i);
         size = 2
       } else if(code.substr(0, 2) === 'R1'){
         this.setSlotToState("R1", i);
@@ -274,14 +288,38 @@ export default {
       } else if(code.substr(0, 3) === 'V02'){
         this.setSlotToState("V02", i);
         size = 3
+      } else if(code.substr(0, 3) === 'V12'){
+        this.setSlotToState("V12", i);
+        size = 3
+      } else if(code.substr(0, 3) === 'V22'){
+        this.setSlotToState("V22", i);
+        size = 3
       } else if(code.substr(0, 3) === 'H02'){
         this.setSlotToState("H02", i);
+        size = 3
+      } else if(code.substr(0, 3) === 'H12'){
+        this.setSlotToState("H12", i);
+        size = 3
+      } else if(code.substr(0, 3) === 'H22'){
+        this.setSlotToState("H22", i);
         size = 3
       } else if(code.substr(0, 3) === 'H08'){
         this.setSlotToState("H08", i);
         size = 2
+      } else if(code.substr(0, 3) === 'H18'){
+        this.setSlotToState("H18", i);
+        size = 2
+      } else if(code.substr(0, 3) === 'H28'){
+        this.setSlotToState("H28", i);
+        size = 2
       } else if(code.substr(0, 3) === 'V08'){
         this.setSlotToState("H08", i);
+        size = 2
+      } else if(code.substr(0, 3) === 'V18'){
+        this.setSlotToState("H18", i);
+        size = 2
+      } else if(code.substr(0, 3) === 'V28'){
+        this.setSlotToState("H28", i);
         size = 2
       } else if(code.substr(0, 5) === 'CH2ac'){
         this.setSlotToState("CH2ac", i);

@@ -41,7 +41,26 @@ export default {
     isSwitch(){
       let isSwitch = false;
       Object.keys(this.comboParameters.selectedSlots).forEach(key => {
-        if(this.comboParameters.selectedSlots[key] === '01' || this.comboParameters.selectedSlots[key] === 'V02' || this.comboParameters.selectedSlots[key] === 'H02' || this.comboParameters.selectedSlots[key] === '04' || this.comboParameters.selectedSlots[key] === 'H08' || this.comboParameters.selectedSlots[key] === 'V08'){
+        if(
+            this.comboParameters.selectedSlots[key] === '01' ||
+            this.comboParameters.selectedSlots[key] === '11' ||
+            this.comboParameters.selectedSlots[key] === '21' ||
+            this.comboParameters.selectedSlots[key] === 'V02' ||
+            this.comboParameters.selectedSlots[key] === 'V12' ||
+            this.comboParameters.selectedSlots[key] === 'V22' ||
+            this.comboParameters.selectedSlots[key] === 'H02' ||
+            this.comboParameters.selectedSlots[key] === 'H12' ||
+            this.comboParameters.selectedSlots[key] === 'H22' ||
+            this.comboParameters.selectedSlots[key] === '04' ||
+            this.comboParameters.selectedSlots[key] === '14' ||
+            this.comboParameters.selectedSlots[key] === '24' ||
+            this.comboParameters.selectedSlots[key] === 'H08' ||
+            this.comboParameters.selectedSlots[key] === 'H18' ||
+            this.comboParameters.selectedSlots[key] === 'H28' ||
+            this.comboParameters.selectedSlots[key] === 'V08' ||
+            this.comboParameters.selectedSlots[key] === 'V18' ||
+            this.comboParameters.selectedSlots[key] === 'V28'
+        ){
           isSwitch = true
         }
       })

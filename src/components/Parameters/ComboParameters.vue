@@ -257,24 +257,30 @@ export default {
     },
     isIncludeSwitch(){
       let include = false;
-      if(this.currentComboArtikul.includes('01')){
-        include = true
-      }
-      if(this.currentComboArtikul.includes('H02')){
-        include = true
-      }
-      if(this.currentComboArtikul.includes('V02')){
-        include = true
-      }
-      if(this.currentComboArtikul.includes('04')){
-        include = true
-      }
-      if(this.currentComboArtikul.includes('H08')){
-        include = true
-      }
-      if(this.currentComboArtikul.includes('V08')){
-        include = true
-      }
+      if(this.currentComboArtikul.includes('X1')){ include = true }
+      if(this.currentComboArtikul.includes('01')){ include = true }
+      if(this.currentComboArtikul.includes('11')){ include = true }
+      if(this.currentComboArtikul.includes('21')){ include = true }
+      if(this.currentComboArtikul.includes('HX2')){ include = true }
+      if(this.currentComboArtikul.includes('H02')){ include = true }
+      if(this.currentComboArtikul.includes('H12')){ include = true }
+      if(this.currentComboArtikul.includes('H22')){ include = true }
+      if(this.currentComboArtikul.includes('VX2')){ include = true }
+      if(this.currentComboArtikul.includes('V02')){ include = true }
+      if(this.currentComboArtikul.includes('V12')){ include = true }
+      if(this.currentComboArtikul.includes('V22')){ include = true }
+      if(this.currentComboArtikul.includes('X4')){ include = true }
+      if(this.currentComboArtikul.includes('04')){ include = true }
+      if(this.currentComboArtikul.includes('14')){ include = true }
+      if(this.currentComboArtikul.includes('24')){ include = true }
+      if(this.currentComboArtikul.includes('HX8')){ include = true }
+      if(this.currentComboArtikul.includes('H08')){ include = true }
+      if(this.currentComboArtikul.includes('H18')){ include = true }
+      if(this.currentComboArtikul.includes('H28')){ include = true }
+      if(this.currentComboArtikul.includes('VX8')){ include = true }
+      if(this.currentComboArtikul.includes('V08')){ include = true }
+      if(this.currentComboArtikul.includes('V18')){ include = true }
+      if(this.currentComboArtikul.includes('V28')){ include = true }
       return include
     },
     numberFieldName(){

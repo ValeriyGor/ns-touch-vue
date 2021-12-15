@@ -124,7 +124,23 @@ export default {
     },
     getTrimArtikul(param){
       let icons = Object.keys(param.parameters.slotsTouchIcons).filter(key => {
-        if(param.parameters.selectedSlots[key] === '01' || param.parameters.selectedSlots[key] === 'H02' || param.parameters.selectedSlots[key] === 'V02' || param.parameters.selectedSlots[key] === '04' || param.parameters.selectedSlots[key] === 'H08'){
+        if(
+            param.parameters.selectedSlots[key] === '01' ||
+            param.parameters.selectedSlots[key] === '11' ||
+            param.parameters.selectedSlots[key] === '21' ||
+            param.parameters.selectedSlots[key] === 'H02' ||
+            param.parameters.selectedSlots[key] === 'H12' ||
+            param.parameters.selectedSlots[key] === 'H22' ||
+            param.parameters.selectedSlots[key] === 'V02' ||
+            param.parameters.selectedSlots[key] === 'V12' ||
+            param.parameters.selectedSlots[key] === 'V22' ||
+            param.parameters.selectedSlots[key] === '04' ||
+            param.parameters.selectedSlots[key] === '14' ||
+            param.parameters.selectedSlots[key] === '24' ||
+            param.parameters.selectedSlots[key] === 'H08' ||
+            param.parameters.selectedSlots[key] === 'H18' ||
+            param.parameters.selectedSlots[key] === 'H28'
+        ){
           return true
         } else {
           return false
@@ -145,7 +161,23 @@ export default {
     },
     getIcons(param){
       let icons = Object.keys(param.parameters.slotsTouchIcons).filter(key => {
-        if(param.parameters.selectedSlots[key] === '01' || param.parameters.selectedSlots[key] === 'H02' || param.parameters.selectedSlots[key] === 'V02' || param.parameters.selectedSlots[key] === '04' || param.parameters.selectedSlots[key] === 'H08'){
+        if(
+            param.parameters.selectedSlots[key] === '01' ||
+            param.parameters.selectedSlots[key] === '11' ||
+            param.parameters.selectedSlots[key] === '21' ||
+            param.parameters.selectedSlots[key] === 'H02' ||
+            param.parameters.selectedSlots[key] === 'H12' ||
+            param.parameters.selectedSlots[key] === 'H22' ||
+            param.parameters.selectedSlots[key] === 'V02' ||
+            param.parameters.selectedSlots[key] === 'V12' ||
+            param.parameters.selectedSlots[key] === 'V22' ||
+            param.parameters.selectedSlots[key] === '04' ||
+            param.parameters.selectedSlots[key] === '14' ||
+            param.parameters.selectedSlots[key] === '24' ||
+            param.parameters.selectedSlots[key] === 'H08' ||
+            param.parameters.selectedSlots[key] === 'H18' ||
+            param.parameters.selectedSlots[key] === 'H28'
+        ){
           return true
         } else {
           return false
